@@ -241,9 +241,21 @@ Uninstall removes the Scheduled Task and asks whether to delete `config.json`, `
 - Network folders depend on Windows credentials and network availability.
 - Very high-volume folders may require shorter polling intervals or operational monitoring.
 
+## Release Package
+
+Normal users can download the ZIP from GitHub Releases once available.
+
+For users who do not use Git, maintainers can create a release ZIP:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\package.ps1
+```
+
+The ZIP is written to `dist/` and excludes local config, logs, and state files.
+
 ## Roadmap
 
-- Release zip packaging
+- Optional automated release packaging
 - Optional health-check notifications
 - Optional Windows Event Log output
 - More detailed Telegram rate-limit handling

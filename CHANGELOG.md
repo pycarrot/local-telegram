@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 - Initial open source release
+## 0.1.0-beta - Initial beta release
 
 - Added one-command setup
 - Added Scheduled Task installer
@@ -9,3 +9,5 @@
 - Added persistent state
 - Added retry and failed-send tracking
 - Added logs and troubleshooting docs
+- Added release checklist
+- Added release packaging script
