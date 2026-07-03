@@ -1,5 +1,11 @@
 Add-Type -AssemblyName System.Net.Http
 
+function Assert-PowerShellVersion {
+    if ($PSVersionTable.PSVersion -lt [version]"5.1") {
+        throw "Windows PowerShell 5.1 or newer is required."
+    }
+}
+
 function Get-AppRoot {
     return (Split-Path -Parent $PSScriptRoot)
 }

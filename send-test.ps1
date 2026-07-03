@@ -5,6 +5,8 @@ param(
 
 . "$PSScriptRoot\scripts\common.ps1"
 
+Assert-PowerShellVersion
+
 try {
     $config = Load-Config
     Assert-Config -Config $config

@@ -1,5 +1,7 @@
 . "$PSScriptRoot\scripts\common.ps1"
 
+Assert-PowerShellVersion
+
 $taskName = "LocalTelegramNotifier"
 $scriptPath = Join-Path $PSScriptRoot "watch.ps1"
 $logPath = Get-LogPath
@@ -24,7 +26,7 @@ catch {
     Write-Host "Warning: could not read config.json yet. Run .\setup.ps1 if this is a fresh install."
 }
 
-$command = "& '$scriptPath' *> '$logPath'"
+$command = "& '$scriptPath' *>> '$logPath'"
 $arguments = "-NoProfile -ExecutionPolicy Bypass -Command `"$command`""
 $action = New-ScheduledTaskAction -Execute $powershell -Argument $arguments -WorkingDirectory $PSScriptRoot
 $settings = New-ScheduledTaskSettingsSet -RestartCount 3 -RestartInterval (New-TimeSpan -Minutes 1) -MultipleInstances IgnoreNew

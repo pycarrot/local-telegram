@@ -23,7 +23,30 @@ It is designed for non-technical Windows users: run setup once, then manage it w
 - Telegram bot token
 - Telegram chat, group, or channel where the bot can send messages
 
+## Download / Clone
+
+### Option A: Git
+
+```powershell
+git clone https://github.com/pycarrot/local-telegram.git
+cd local-telegram
+powershell -ExecutionPolicy Bypass -File .\setup.ps1
+```
+
+### Option B: Download ZIP
+
+1. Click **Code** > **Download ZIP** on GitHub.
+2. Extract the ZIP file.
+3. Open PowerShell in the extracted folder.
+4. Run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\setup.ps1
+```
+
 ## Quick Start
+
+From inside the project folder, run:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\setup.ps1
@@ -158,7 +181,7 @@ powershell -ExecutionPolicy Bypass -File .\stop.ps1
 powershell -ExecutionPolicy Bypass -File .\status.ps1
 ```
 
-If the Scheduled Task is not installed, `start.ps1` runs `watch.ps1` in the current PowerShell window.
+If the Scheduled Task is not installed, `start.ps1` will ask before running `watch.ps1` in the current PowerShell window.
 
 ## Uninstall
 

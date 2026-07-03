@@ -1,8 +1,6 @@
 . "$PSScriptRoot\scripts\common.ps1"
 
-if ($PSVersionTable.PSVersion.Major -lt 5) {
-    throw "Windows PowerShell 5.1 or newer is required."
-}
+Assert-PowerShellVersion
 
 New-Item -ItemType Directory -Force -Path (Split-Path -Parent (Get-LogPath)), (Get-DataPath) | Out-Null
 

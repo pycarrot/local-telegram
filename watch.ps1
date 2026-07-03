@@ -1,5 +1,7 @@
 . "$PSScriptRoot\scripts\common.ps1"
 
+Assert-PowerShellVersion
+
 try {
     [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 }

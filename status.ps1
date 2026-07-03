@@ -1,5 +1,7 @@
 . "$PSScriptRoot\scripts\common.ps1"
 
+Assert-PowerShellVersion
+
 $taskName = "LocalTelegramNotifier"
 $configPath = Get-ConfigPath
 $logPath = Get-LogPath
@@ -28,6 +30,9 @@ try {
     foreach ($folder in @(Get-WatchFolders $config)) {
         $state = if (Test-Path -LiteralPath $folder -PathType Container) { "OK" } else { "Missing" }
         Write-Host "  [$state] $folder"
+        if (Test-IsMappedDrivePath -Path $folder) {
+            Write-Host "    Warning: this is a mapped network drive. For auto-start, prefer a UNC path like \\server\share\folder."
+        }
         if ($state -eq "Missing") {
             Write-Host "    Warning: this folder is unavailable. The watcher will retry while running."
         }

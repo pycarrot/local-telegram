@@ -1,3 +1,7 @@
+. "$PSScriptRoot\scripts\common.ps1"
+
+Assert-PowerShellVersion
+
 $taskName = "LocalTelegramNotifier"
 $task = Get-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue
 
