@@ -1,0 +1,13 @@
+config.json
+01-config.json
+watcher.log
+*.log
+
+logs/*
+!logs/.gitkeep
+
+data/*
+!data/.gitkeep
+
+.DS_Store
+Thumbs.db
