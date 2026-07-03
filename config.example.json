@@ -1,0 +1,26 @@
+{
+  "telegram": {
+    "bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
+    "chat_id": "YOUR_TELEGRAM_CHAT_ID"
+  },
+  "watch": {
+    "folders": [
+      "C:\\Path\\To\\CameraFolder1",
+      "C:\\Path\\To\\CameraFolder2"
+    ],
+    "file_filter": "*.jpg",
+    "poll_minutes": 2,
+    "send_existing_files_from_last_minutes": 0
+  },
+  "message": {
+    "caption_template": "Camera: {camera}\nTime: {date} {time}\nFolder: {folder}",
+    "send_as_document_on_photo_fail": true
+  },
+  "reliability": {
+    "retry_count": 3,
+    "retry_delay_seconds": 10,
+    "max_file_ready_wait_seconds": 30,
+    "log_retention_days": 14,
+    "state_retention_days": 30
+  }
+}
